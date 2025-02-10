@@ -1,0 +1,8 @@
+data_path_1     /seq/plasmodium/Pfal_life_cycle_sel/dfe-alpha-release-2.16/data/
+divergence_file         /seq/plasmodium/Pfal_life_cycle_sel/dfe_files/divergence_files/ookinete.txt
+est_alpha_omega_results_file    est_alpha_omega_ookinete.out
+est_dfe_results_file    results_dir_ook/est_dfe.out
+neut_egf_file           results_dir_ook_neut/neut_egf.out
+sel_egf_file            results_dir_ook/sel_egf.out
+do_jukes_cantor         1
+remove_poly             1

@@ -1,0 +1,15 @@
+data_path_1     /seq/plasmodium/Pfal_life_cycle_sel/dfe-alpha-release-2.16/data
+data_path_2     /seq/plasmodium/Pfal_life_cycle_sel/dfe-alpha-release-2.16/data-three-epoch/
+sfs_input_file  /seq/plasmodium/Pfal_life_cycle_sel/dfe_files/gametocyte_dfe.txt
+est_dfe_results_dir     /seq/plasmodium/Pfal_life_cycle_sel/dfe-alpha-release-2.16/results_dir_gam_neut/
+site_class 0
+fold       1
+epochs     2
+n          1
+n2         1000
+t2_variable 1
+t2         1000
+#beta            0.2
+#beta_variable     1
+#mean_s_variable   1
+#mean_s            0.01
