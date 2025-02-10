@@ -103,13 +103,13 @@ ggplot(diversity, aes(x=pi_ns_div_pi_s,y=pnps)) + geom_point()
 diversity <- left_join(diversity, breadth_labels)
 View(diversity)
 div_processed <- diversity %>% dplyr::select(-c(variable,ID,X,STOP_CODONS)) %>% 
-  dplyr::rename(c("Antigen"="ag", "missing_data_proportion"="value", 
+  dplyr::rename(c("Antigen"="ag", "variant_pass_rate"="value", 
                   "tajimas_d" = "tajimas_d_all", "population"="pop")) %>% 
   dplyr::select(COORD, GENE, NAME, PROP_NS, PROP_SYN, PROP_FFD, TOTAL_CODING_LENGTH, 
                 population, pi_ns, pi_s, 
                 pnps, tajimas_d, fst.drc.ghana, fst.drc.tanzania, fst.drc.cambodia,
                 fst.ghana.tanzania, fst.tanzania.cambodia, fst.ghana.cambodia, 
-                missing_data_proportion, breadth) 
+                variant_pass_rate, breadth) 
 
 write.csv(div_processed, fn_out, row.names = FALSE)
 
