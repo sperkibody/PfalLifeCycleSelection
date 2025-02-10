@@ -14,12 +14,12 @@ diversity_df_filtering.R: After runpi.sh executes and results are put into data 
 (Fig. S2, S13)
 pf7_missingness_viz.R: analyze pf7 variant call missingness data across genome. Also looks at proportion of FFD sites across gene set. 
 
-(Fig. 3, S8, Table 1, Table S1)
+(Fig. 3, S8, Table S1, Table S2)
 pnps.py: calculate main diversity statistics from VCF files using scikit-allel. 
 stage_analysis.R: Specify gene sets (primary or secondary) at beginning of file. Statistically compare and plot diversity statistics by stage. 
 runpi.sh: Shell file for running pnps.py on a specified population. 
 
-Fst (Fig. 4, Table 2)
+Fst (Fig. 4, Table S3)
 fst.py: calculate fst using scikit-allel
 fst_plots.R: plot and statistically compare Fst results 
 
