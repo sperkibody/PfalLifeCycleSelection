@@ -25,6 +25,7 @@ Genome-wide length correlations (Fig. S4-5)
 - min_expression_2.5.txt: contains basic set of genes expressed in assay. Useful for specifying genes for use in initial statistic generation files. Alternatively, can use gene_sets_assay/*.txt directory or other desired directory (which can be used to produce output file with genes labeled by gene set).
 - divstats/: includes output from runpi.sh and fst.py, before processing into single diversity value file.
 - AltTranscriptLengths.csv: Includes transcript lengths for each gene. Used to validate that site counts consider the longest transcript for each gene and adjust counts in 14 special cases where longest transcript was not initially considered.
+- helb_seropos.txt: Includes gene IDs for antigens identified by Helb. et al in antibody reactivity screen (https://pubmed.ncbi.nlm.nih.gov/26216993/). Data from supp file. 
 - diversity_values.csv: Output of diversity_df_filtering.R for use in analysis and plotting files. Includes diversity statistics for 3,699 genes in each of the four populations. NA values denote cases where statistics or labels could not be calculated (e.g. no variants in population for Fst calculations or gene not detected in assay). Pf7 variant call pass rate, site counts, breadth labels included. Each row corresponds to diversity values in one of the 4 populations for a given gene.
 - stage_div_comparisons.csv: meta-analysis results for stage-stage comparisons of primary gene set from stage_analysis.R. 
 - fst_results.csv: meta-analysis results for stage-stage comparisons from fst_plots.R.
