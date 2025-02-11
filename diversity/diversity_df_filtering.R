@@ -3,7 +3,7 @@ library(tidyverse)
 library(dplyr)
 ###############MAIN DIVERSITY STATISTICS##########################
 setwd('~')
-path="/Users/sap8772/Documents/Neafsey_lab/"
+path=""
 fn_out = paste(path,'diversity_values.csv', sep="")
 breadth_labels <- read.csv(paste(path,'breadth_final.csv',sep="")) %>% dplyr::rename(c("GENE"="gene")) %>% dplyr::select(-X)
 props=read.csv(paste(path,'props_adj_breadth.txt',sep = ""), sep='\t')
@@ -47,7 +47,7 @@ stat_df <- function(stat, pops = c('cambodia', 'drc', 'tanzania', 'ghana'),
   return(pidf_all)
 }
 ### new df 
-divpath=paste(path,'divstats_td_fixed/',sep="")
+divpath=paste(path,'divstats/',sep="")
 args0=c('all')
 # read in all diversity statistic files 
 pi_ns_all <- stat_df('pi_ns', args=args0,divpath=divpath) 
