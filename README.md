@@ -19,3 +19,6 @@ Scripts for downloading and filtering Pf7 VCFs to include chosen population samp
 
 ## sample_selection
 Script to select specific samples from Pf7 metadata. Includes selection step to isolate clonal clusters from hmmIBD output. 
+
+## data
+Includes input and output data needed for or produced by scripts in all other directories, including some intermediate files. 
