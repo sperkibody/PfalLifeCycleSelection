@@ -9,7 +9,7 @@ Scripts executing DFE-alpha based on diversity and divergence datasets using a l
 
 - dfe_files: Directory for tmp files, including sfs_dfe.py output, divergence_filter.py output, and jackknife exclude gene ID for each jackknife run. Includes divergence estimates subset for gene sets of interest (e.g. primary gene sets, m3_final)
 
-- config_expansion: includes config files used for DFE-alpha analysis. Files are set to run with demographic expansion. 
+- config_expansion: includes config files used for DFE-alpha analysis. Files are set to run with demographic expansion model. 
 
 - DFE_convert_txt_to_csv.ipynb: Converts output from DFE analysis pipeline into CSV for subsequent graphing and analysis (input and output filenames need to be modified/specified). 
 
