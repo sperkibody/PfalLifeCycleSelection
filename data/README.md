@@ -14,3 +14,5 @@
 ## Divergence: 
 
 ## DFE-alpha: 
+- dfe_files: Directory for tmp files, including sfs_dfe.py output, divergence_filter.py output, and jackknife exclude gene ID for each jackknife run. Includes divergence estimates subset for gene sets of interest (e.g. primary gene sets, m3_final)
+- dfe_output_files: includes DFE-alpha output processed as .csv files from .txt files. 
