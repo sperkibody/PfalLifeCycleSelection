@@ -96,7 +96,7 @@ dfe_plots <- function(pop, stat0, supfig=FALSE,shiftup=2, bars=TRUE,pop_title=TR
 }
 
 # fig 5
-run_id_main = "dfe_files/DFE_results_m3_final_reich_fig5.csv" # main dataset
+run_id_main = "dfe_output_files/DFE_results_m3_final_reich_fig5.csv" # main dataset
 dfea <- read_dfe(run_id_main) %>% filter(country == "ghana")
 # plot main fig: Ghana data, synonymous sites
 ggarrange(dfe_plots("ghana","Q",bars = FALSE,pop_title = FALSE), 
@@ -110,14 +110,14 @@ dfe_stats(dfea)
 
 # fig. S10
 # plot FFD and praefal together 
-run_id <- "dfe_files/DFE_results_m3_final_reich_ffd_figs10.csv"
+run_id <- "dfe_output_files/DFE_results_m3_final_reich_ffd_figs10.csv"
 dfea <- read_dfe(run_id)
 # significance test: pairwise wilcoxon rank sum test
 q_ffd <- dfe_plots("ghana", "Q")
 a_ffd <- dfe_plots("ghana", "alpha")
 o_ffd <- dfe_plots("ghana", "omega")
 dfe_stats(dfea)
-run_id = "dfe_files/DFE_results_m3_final_praefal_fig_s10.csv" # praefal data 
+run_id = "dfe_output_files/DFE_results_m3_final_praefal_fig_s10.csv" # praefal data 
 dfea <- read_dfe(run_id,species="praefal")
 q_pr <- dfe_plots("ghana", "Q")
 a_pr <- dfe_plots("ghana", "alpha")
@@ -138,7 +138,7 @@ ggsave(filename="lsfigs/figS10.png",
        dpi=300, width = 5.5, height=5.5*rat, scale = scaled, units="in")
 
 # fig S12
-run_id = dfea <- "dfe_files/DFE_results_m3_final_reich_syn_no_demoexp_figs12.csv"
+run_id = dfea <- "dfe_output_files/DFE_results_m3_final_reich_syn_no_demoexp_figs12.csv"
 dfea <- read_dfe(run_id)
 # plot main fig: Ghana data, synonymous sites
 ggarrange(dfe_plots("ghana","Q",pop_title = FALSE), 
@@ -150,7 +150,7 @@ ggsave(filename="lsfigs/figS12.png", dpi=300,
 dfe_stats(dfea)
 
 # fig. S11
-run_id_main = "dfe_files/DFE_results_m3_final_reich_fig5.csv" # alternate pop data is also in this file
+run_id_main = "dfe_output_files/DFE_results_m3_final_reich_fig5.csv" # alternate pop data is also in this file
 dfea <- read_dfe(run_id_main)
 w = 8.5
 h = 12
