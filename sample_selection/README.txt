@@ -1,1 +1,0 @@
-pf7_filtering: Choose samples from representative population using Pf7 metadata, Pf7 Fws information (to filter out complex infections). Use clusters from hmmIBD in second part of code to filter samples down to cluster representatives. 
