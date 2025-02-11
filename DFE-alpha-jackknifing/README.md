@@ -1,7 +1,7 @@
 # DFE-alpha jackknifing
 Scripts executing DFE-alpha based on diversity and divergence datasets using a leave-one-out approach. 
 
-- divergence_filter.py: updates divergence estimates with jackknifed gene excluded. Can be modified to change what species is used a reference for divergence data. Also can be modified to use S or FFD sites as neutral. 
+- divergence_filter.py: updates divergence estimates with jackknifed gene excluded. Can be modified to change what species is used a reference for divergence data. Also can be modified to use S or FFD sites as neutral. Writes divergence estimates for filtered genes to temporary divergence files in corresponding directory (make sure to create directory for this and specify name/path appropriately).
 
 - sfs_dfe.py: updates dfe estimates with jackknifed gene excluded. Can be modified to change what population data is used as input. Also can be modified to use S or FFD sites as neutral.  
 
