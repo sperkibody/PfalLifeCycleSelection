@@ -3,10 +3,9 @@ library(ggpubr)
 library(viridis)
 library(ggplot2)
 library(dplyr)
-library(gtable)
 #### READ IN DF AND ADD STAGE LABELS 
-#path = '' # add path to data directory 
-path="/Users/sap8772/Documents/Neafsey_lab/"
+# add path to data directory 
+path=""
 fn = paste(path, 'diversity_values.csv', sep='')
 diversity <- read.csv(fn)
 gs="m3_combined"
