@@ -118,7 +118,7 @@ pdiv <- ggplot(filter(diversity_breadth_overall, !is.na(breadth), !is.na(pop), i
         strip.background = element_blank(), strip.text = element_text(size=25)) + scale_x_discrete(labels=cnames)
 
 
-###############FIGURE S6##########################
+###############FIGURE S7##########################
 w = 8
 h = 10
 rat = h/w
@@ -128,7 +128,7 @@ scaled = w/5.5
 ggarrange(breadth_plot(), breadth_plot("praefal"), pdiv, labels = c("A", "B", "C"), 
           font.label = list(size = 25), 
           ncol = 1, nrow = 3)
-ggsave(filename=paste(path,"lsfigs/figS8.png",sep=""), 
+ggsave(filename=paste(path,"lsfigs/figS7.png",sep=""), 
        dpi=300, width = 5.5, height=5.5*rat, scale = scaled, units="in")
 
 # save breadth above 3 genes as file to input into shinyGO for enrichment analysis 
