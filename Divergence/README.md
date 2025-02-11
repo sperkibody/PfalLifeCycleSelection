@@ -1,7 +1,7 @@
 ## Scripts
 - ortho_match.ipynb: Takes input from PlasmoDB (files listing ortholog groups for species pairs). Outputs gene IDs as txt files for input into plasmoDB search strategy, described in file.
 - divergence_deidentified.ipynb: Takes fasta output from plasmoDB search (after ortho_match.ipynb list generation) and calculates dN and dS for sequences.
-- final_stats_breadth.R: Use diversity and divergence estimates with breadth labels to calculate breadth correlations and make breadth plots in supp fig. 8 (Fig. S8)
+- final_stats_breadth.R: Use diversity and divergence estimates with breadth labels to calculate breadth correlations and make breadth plots in supp fig. 7 (Fig. S7)
 - dNdSfig2.R: Takes output file from divergence_deidentified.ipynb. Calculates dN/dS from estimates in intermediate .csv file generated. (Fig. 2)
 
 ## Data directories:
