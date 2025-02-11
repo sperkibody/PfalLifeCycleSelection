@@ -4,7 +4,7 @@ divergence_filter.py: updates divergence estimates with jackknifed gene excluded
 
 sfs_dfe.py: updates dfe estimates with jackknifed gene excluded. Can be modified to change what population data is used as input. Also can be modified to use S or FFD sites as neutral.  
 
-dfe_jackknife.sh: runs divergence_filter.py, sfs_dfe.py, and dfe-alpha executables via jackknifing approach, excluding one gene in specified gene set at a time. Specific if S or FFD sites are used as neutral. Also specify what population dataset is used. 
+dfe_jackknife.sh: runs divergence_filter.py, sfs_dfe.py, and dfe-alpha executables via jackknifing approach, excluding one gene in specified gene set at a time. Specific if S or FFD sites are used as neutral. Also specify what population dataset is used. Config files used can also be modified to specify file paths and model (epoch number, generation number, population size at each epoch, etc.) as described in DFE-alpha documentation. 
 
 dfe_files: Directory for tmp files, including sfs_dfe.py output, divergence_filter.py output, and jackknife exclude gene ID for each jackknife run. Includes divergence estimates subset for gene sets of interest (e.g. primary gene sets, m3_final)
 
