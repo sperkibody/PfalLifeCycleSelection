@@ -21,7 +21,7 @@ exclude = []
 with open('dfe_files/jackknife_exclude/'+lifestage+'.txt') as f: 
 	for line in f:
 		exclude.append(line.strip())
-#iterate through all genes in bed file to get start and stop positions
+# iterate through all genes in bed file to get start and stop positions
 props = pd.read_csv('props_adj_breadth.txt', sep = '\t')
 # get total counts of S and NS sites from bed files
 ns = 0
@@ -35,7 +35,8 @@ with open(set_base+'_bed/'+lifestage+'.bed') as f:
 		start0 = np.min([int(bdat[1]), int(bdat[2])])
 		end0 = np.max([int(bdat[1]), int(bdat[2])])
 		if (gene in exclude): continue 
-		# multiply site counts by missing data rate estimates 
+		# multiply site counts by variant pass rate estimates. Do NOT exclude genes below threshold for this pipeline, 
+		# because all sites are considered together in folded spectrum.
 		region0=str(chrom0)+':'+str(start0)+'-'+str(end0)
 		entry = props['COORD'].str.contains(region0)
 		if not np.sum(entry): 
@@ -52,14 +53,11 @@ ns = np.round(ns)
 neutral = np.round(neutral) 
 print(ns, 'total ns sites and ', neutral, ' total ' + neut_key + ' sites')
 
+# combine masks for chromosome and position to filter GT data by gene 
 def filter_callset(callset, chrom, start, end):
-	# chrom mask 
 	chrom_mask = callset['variants/CHROM']==chrom
-	# mask for position
 	pos_mask = np.isin(callset['variants/POS'], np.arange(start, end))
-	# combine masks
 	gene_mask = ~(np.logical_and(chrom_mask, pos_mask))
-	# filter dataset
 	return(callset['calldata/GT'][gene_mask])
 
 # create folded sfs files to input into DFE analysis for S and NS sites across entire life stage 
