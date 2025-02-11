@@ -3,6 +3,11 @@
 - Pf7_fws.txt: Fws estimates per sample from Pf7. 
 - *.clusters.0.25.txt: hmmIBD clonal clusters from population samples. Choose single representative sample from clusters in pf7_filtering. 
 
+## Gene set selection
+- breadth_final.csv: breadth labels from 50% expression and DE approach
+- m3_combined.csv: primary gene sets. Supp file 2.
+- stage_specific.csv: secondary gene sets. Supp file 3. 
+
 ## VCF filtering: 
 
 - PlasmoDB-31_Pfalciparum3D7_gene_coord_CORE_ONLY.bed: bed file with genes falling in the core region. This can be subset to include genes of interest listed in txt files. 
