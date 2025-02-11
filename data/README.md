@@ -5,9 +5,11 @@
 - pf7_pops/*.txt: Lists of sample IDs selected for each population after all filtering steps, including quality filtering, relatedness filtering, and monogenomic sample selection. 
 
 ## Gene set selection
+
 - breadth_final.csv: breadth labels from 50% expression and DE approach
 - m3_combined.csv: primary gene sets. Supp file 2.
-- stage_specific.csv: secondary gene sets. Supp file 3. 
+- stage_specific.csv: secondary gene sets. Supp file 3.
+- sporozoite_full.txt: gold standard sporozoite gene set from ‘Novel insights from the Plasmodium falciparum sporozoite-specific proteome by probabilistic integration of 26 studies’ Meerstein-Kessel, L. et al., PLOS Computational Biology 2021, 17, e1008067  https://doi.org/10.1371/journal.pcbi.1008067. (Data from supp file.)
 
 ## VCF filtering: 
 
@@ -16,11 +18,13 @@
 - ffd_codon_changes.txt: File listing FFD codon changes (as annotated by SNPSift) for custom script filtering VCF-encoded FFD variants. 
 
 ## Diversity:
+
 - props_adj_breadth.txt: File containing site count estimates from count_ns_syn_sites_per_transcript.pl. Includes preliminary breadth estimates before final DE filter (this column is removed before analysis in statistical analysis and plotting scripts, but acts as a place holder at this stage). File is used for pnps.py statistic generate scripts.
 - min_expression_2.5.txt: contains basic set of genes expressed in assay. Useful for specifying genes for use in initial statistic generation files. Alternatively, can use gene_sets_assay/*.txt directory or other desired directory (which can be used to produce output file with genes labeled by gene set).
 - divstats/: includes output from runpi.sh and fst.py, before processing into single diversity value file.
 - AltTranscriptLengths.csv: Includes transcript lengths for each gene. Used to validate that site counts consider the longest transcript for each gene and adjust counts in 14 special cases where longest transcript was not initially considered.
-- helb_seropos.txt: Includes gene IDs for antigens identified by Helb. et al in antibody reactivity screen (https://pubmed.ncbi.nlm.nih.gov/26216993/). Data from supp file. 
+- helb_seropos.txt: Includes gene IDs for antigens identified by Helb. et al in antibody reactivity screen: ‘Novel serologic biomarkers provide accurate estimates of recent Plasmodium falciparum exposure for individuals and communities.’ Helb, D.A. et al., Proceedings of the National Academy of Sciences 2024, 112, E4438–E4447 https://doi.org/10.1073/pnas.1501705112 (Data from supp file.)
+
 - diversity_values.csv: Output of diversity_df_filtering.R for use in analysis and plotting files. Includes diversity statistics for 3,699 genes in each of the four populations. NA values denote cases where statistics or labels could not be calculated (e.g. no variants in population for Fst calculations or gene not detected in assay). Pf7 variant call pass rate, site counts, breadth labels included. Each row corresponds to diversity values in one of the 4 populations for a given gene.
 - stage_div_comparisons.csv: meta-analysis results for stage-stage comparisons of primary gene set from stage_analysis.R. 
 - fst_results.csv: meta-analysis results for stage-stage comparisons from fst_plots.R.
