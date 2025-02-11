@@ -1,7 +1,8 @@
 ## Sample selection: 
 
 - Pf7_fws.txt: Fws estimates per sample from Pf7. 
-- *.clusters.0.25.txt: hmmIBD clonal clusters from population samples. Choose single representative sample from clusters in pf7_filtering. 
+- *.clusters.0.25.txt: hmmIBD clonal clusters from population samples. Choose single representative sample from clusters in pf7_filtering.
+- pf7_pops/*.txt: Lists of sample IDs selected for each population after all filtering steps, including quality filtering, relatedness filtering, and monogenomic sample selection. 
 
 ## Gene set selection
 - breadth_final.csv: breadth labels from 50% expression and DE approach
