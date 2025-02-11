@@ -4,7 +4,7 @@
 #*2) defining stage-specific genes as described by Howick et al. and Tebben et al.--genes expressed in 50% of cells with a life stage label for only one life stage. 
 #*3) filtering at assay level for genes with low level expression 
 #*4) examining overlap between gene sets 
-#*5) examing overlap between life stage expression patterns overall 
+#*5) examing correlation between binary life stage-specific expression patterns 
 #***********************************************************************
 # load libraries
 suppressWarnings({
@@ -192,13 +192,12 @@ for(n in 1:5) {
   }
 }
 
-# within final DF, adjust p-values and find minimum (or max?) breadth 
+# within final DF, adjust p-values and find max breadth 
 mdf$fdr <- p.adjust(mdf$pval, method = 'BH')
 mdf <- mdf %>% filter(fdr < 0.01)
 breadth_6 <- tallies[tallies$n==6,]$gene
 breadth_6 <- genes[!(genes %in% mdf$gene) & (genes %in% filter(n_50_min, n==6)$gene)]
-breadth_de <- mdf %>% group_by(gene) %>% summarize(breadth = max(breadth)) # %>% 
-# filter(!gene %in% breadth_6)
+breadth_de <- mdf %>% group_by(gene) %>% summarize(breadth = max(breadth)) 
 
 # add in the final category 
 breadth_6 <- data.frame(gene = breadth_6, breadth=rep(as.integer(6),length(breadth_6)))
@@ -209,7 +208,7 @@ fn_out_breadth = paste(path,"breadth_final.csv",sep="",row.names=FALSE)
 write.csv(breadth_de, fn_out_breadth)
 4930 - nrow(breadth_de)
 
-# also save this to txt files 
+# also save this to txt files -- currently tmp name but rename as necessary
 for(i in unique(breadth_de$breadth)){
   sub <- breadth_de[breadth_de$breadth==i,]
   fn_sub <- paste(path,'gene_sets_all/',i,'.txt',sep="")
