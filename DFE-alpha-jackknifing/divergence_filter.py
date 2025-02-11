@@ -5,11 +5,9 @@ import sys
 import os
 
 os.chdir('/seq/plasmodium/Pfal_life_cycle_sel/dfe_files')
-# read in pre-computed divergence file 
-#div = pd.read_csv('divergence_by_gene_praefal_gs50_final.csv')
+# read in pre-computed divergence file for chosen reference species. Divergence file already includes stage labels.
 #div = pd.read_csv('divergence_by_gene_praefal_m3_final.csv')
 div = pd.read_csv("divergence_by_gene_preich_m3_final.csv")
-#div = pd.read_csv("divergence_by_gene_preich_gs50.csv")
 # read in life stage and excluded gene for jackknife iteration
 lifestage = sys.argv[1].strip()
 with open('jackknife_exclude/'+lifestage+'.txt') as f: 
