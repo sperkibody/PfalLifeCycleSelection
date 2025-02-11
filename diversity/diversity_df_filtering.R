@@ -5,7 +5,7 @@ library(dplyr)
 setwd('~')
 path="/Users/sap8772/Documents/Neafsey_lab/"
 fn_out = paste(path,'diversity_values.csv', sep="")
-breadth_labels <- read.csv(paste(path,'de50_combined.csv',sep="")) %>% dplyr::rename(c("GENE"="value", "breadth"="variable"))
+breadth_labels <- read.csv(paste(path,'breadth_final.csv',sep="")) %>% dplyr::rename(c("GENE"="gene")) %>% dplyr::select(-X)
 props=read.csv(paste(path,'props_adj_breadth.txt',sep = ""), sep='\t')
 props$X <- gsub("location=", "", props$COORD)
 props$X <- sapply(props$X, function(x) substr(x, 0, nchar(x)-3))
@@ -114,3 +114,7 @@ div_processed <- diversity %>% dplyr::select(-c(variable,ID,X,STOP_CODONS)) %>%
 write.csv(div_processed, fn_out, row.names = FALSE)
 
 div_processed %>% group_by(population)  %>% summarize(n())
+
+left_join(props,breadth_labels) %>% group_by(breadth) %>% filter(!GENE %in% ags) %>%
+  summarize(n_distinct(GENE))
+
