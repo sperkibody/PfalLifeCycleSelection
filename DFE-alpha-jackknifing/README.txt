@@ -10,7 +10,7 @@ dfe_files: Directory for tmp files, including sfs_dfe.py output, divergence_filt
 
 config_expansion: includes config files used for DFE-alpha analysis. Files are set to run with demographic expansion. 
 
-DFE_convert_txt_to_csv.ipynb: Converts output from DFE analysis pipeline into CSV for subsequent graphing and analysis. 
+DFE_convert_txt_to_csv.ipynb: Converts output from DFE analysis pipeline into CSV for subsequent graphing and analysis (input and output filenames need to be modified/specified). 
 
 (Fig. 5, S10-12)
 dfe_plots.R: visualizes and summarizes statistics on resulting data. Statistics are compiled into .csv format by DFE_convert_txt_to_csv.ipynb. 
